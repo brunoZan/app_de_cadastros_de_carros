@@ -1,0 +1,48 @@
+*{margin: 0px;box-sizing: border-box; }
+html
+{
+	background-color: rgb(3, 23, 34);
+}
+body
+{
+	background-color: rgba(370, 203, 234, 1.0);
+	max-width: 70vw;
+	margin: auto;
+}
+
+header 
+{
+	border: 3px solid blue;
+}
+
+nav
+{
+	border: 3px solid green;
+}
+
+main
+{
+	display: flex;
+	border: 3px solid coral;
+	width: 100%;
+	position: relative;
+
+}
+
+section {
+	display: inline;
+	background-color: ;
+	border: 5px solid red;
+	width: 60%;
+}
+aside
+{
+	display: inline;
+	width: 40%;
+	border: 3px solid darkmagenta;
+}
+
+thead {color: green;}
+tbody {color: blue;}
+tfoot {color: red;}
+
