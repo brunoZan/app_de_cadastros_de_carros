@@ -1,8 +1,40 @@
-(function(win){
+(function(window){
 
 function DOM(elements) {
+	if(!(this instanceof DOM))
+		return new DOM(elements);
+
 	this.elements = document.querySelectorAll(elements);
-}
+};
+
+DOM.isArray = function isArray(objectType) {
+	return typeObject(objectType) === '[object Array]';
+};
+
+DOM.isObject = function isObject(objectType) {
+	return typeObject(objectType) === '[object Object';
+};
+
+DOM.isFunction = function isFunction(objectType) {
+	return typeObject(objectType) === '[object Function]';
+};
+
+DOM.isNumber = function isNumber(objectType) {
+	return typeObject(objectType) === '[object Number]';
+};
+
+DOM.isString = function isString(objectType) {
+	return typeObject(objectType) === '[object String]';
+};
+
+DOM.isBoolean = function isBoolean(objectType) {
+	return typeObject(objectType) === '[object Boolean]';
+};
+
+DOM.isNull = function isNull(objectType) {
+	return typeObject(objectType) === '[object Null]' ||
+			 typeObject(objectType) === '[object Undefined]' ;
+};
 
 DOM.prototype.on = function on(eventType, callback) {
 	Array.prototype.forEach.call(this.elements, element => {
@@ -16,8 +48,10 @@ DOM.prototype.off = function off(eventType, callback){
 	});
 };
 
-DOM.prototype.get = function get(){
-	return this.elements;
+DOM.prototype.get = function get(index){
+	if(!index)
+		return this.elements[0];
+	return this.elements[index];
 }
 
 DOM.prototype.forEach = function foEach(){
@@ -49,37 +83,10 @@ DOM.prototype.some = function some(){
 	return Array.prototype.some.apply(this.elements, arguments);
 }
 
-DOM.prototype.isArray = function isArray(objectType) {
-	return typeObject(objectType) === '[object Array]';
-}
 
-DOM.prototype.isObject = function isObject(objectType) {
-	return typeObject(objectType) === '[object Object';
-}
-
-DOM.prototype.isFunction = function isFunction(objectType) {
-	return typeObject(objectType) === '[object Function]';
-}
-
-DOM.prototype.isNumber = function isNumber(objectType) {
-	return typeObject(objectType) === '[object Number]';
-}
-
-DOM.prototype.isString = function isString(objectType) {
-	return typeObject(objectType) === '[object String]';
-}
-
-DOM.prototype.isBoolean = function isBoolean(objectType) {
-	return typeObject(objectType) === '[object Boolean]';
-}
-
-DOM.prototype.isNull = function isNull(objectType) {
-	return typeObject(objectType) === '[object Null]' ||
-			 typeObject(objectType) === '[object Undefined]' ;
-}
 
 function typeObject(object) {
 	return Object.prototype.toString.call(object);
 }
-win.DOM = DOM;
+window.DOM = DOM;
 })(window);

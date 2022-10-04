@@ -3,31 +3,34 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">  
 	<link rel="stylesheet" href="./style.css">
 	<title>brZcars</title>
 </head>
 <body>
 	<header>
-		<h1>brZcars</h1>
+		<h1>
+			<span data-js="company_name"></span>
+			
+		</h1>
 		<nav>
-			<span>(85)992111-111 - </span>
-			<span>Endereço</span>
+			<span data-js="company_phone">(85)992111-111 - </span>
 		</nav>
 
 	</header>
 	<main>
 	<section id="section">
 		<form action="/" data-js="form-register">
-			<label for="">Imagem do carro:</label><br>
-			<input type="url" data-js="imgCar"><br>
-			<label for="">Marca do carro:</label><br>
-			<input type="text" data-js="marca"><br>
-			<label for="">Ano:</label><br>
-			<input type="date" data-js="ano"><br>
-			<label for="">Placa:</label><br>
-			<input type="text" data-js="placa"><br>
-			<label for="">Cor:</label><br>
-			<input type="input" data-js="cor"><br>
+			<label for="">Imagem :</label>
+			<input type="url" data-js="imgCar"><br><br>
+			<label for="">Marca do carro:</label>
+			<input type="text" data-js="marca"><br><br>
+			<label for="">Ano:</label>
+			<input type="date" data-js="ano"><br><br>
+			<label for="">Placa:</label>
+			<input type="text" data-js="placa"><br><br>
+			<label for="">Cor:</label>
+			<input type="text" data-js="cor"><br><br>
 			<input type="submit">
 		</form>
 	</section>
@@ -42,29 +45,14 @@
 					<th>cor</th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr>
-			      <td>January</td>
-			      <td>$100</td>
-			   </tr>
-	    		<tr>
-			      <td>February</td>
-			      <td>$80</td>
-			   </tr>
+			<tbody data-js="tableCar">			
 			</tbody>
-			<tfoot>
-		    <tr>
-		      <td>Sum</td>
-		      <td>$180</td>
-		    </tr>
-	      </tfoot>
 		</table>
 	</aside>
 	</main>
-
-	<div class="pai">
-		<div class="filho"></div>
-	</div>
+	
+	<script src="lib-dom/libDOM.js"></script>
+	<script src="challenge29.js"></script>
 </body>
 </html>
-dsdsghfdfhghsc
+
