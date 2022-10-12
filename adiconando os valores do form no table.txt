@@ -1,0 +1,8 @@
+processo de adicionar os valores na tabela:
+
+criar um fragment -> criar uma tr -> criar um th -> 
+->dar um appendChild das th na tr ->
+-> dar um appendChild da tr no pragment
+
+brinto
+Bruno1no2linked_?
