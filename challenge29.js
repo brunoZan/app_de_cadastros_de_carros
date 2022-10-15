@@ -28,20 +28,32 @@ const app =	(function appControler() {
 	 			let $tdPlaca = document.createElement('td');
 	 			let $tdCor = document.createElement('td');
 	 			let $tdImg = document.createElement('img');
+	 			let $button = document.createElement('button');
 
 	 			$tdMarca.textContent = DOM('[data-js="marca"]').get().value;
 	 			$tdAno.textContent = DOM('[data-js="ano"]').get().value;
 	 			$tdPlaca.textContent = DOM('[data-js="placa"]').get().value;
 	 			$tdCor.textContent = DOM('[data-js="cor"]').get().value;
-	 			$tdImg.setAttribute('src', DOM('[data-js="imgCar"]').get().value)
-	 			
+	 			$tdImg.setAttribute('src', DOM('[data-js="imgCar"]').get().value);
+	 			$button.textContent = 'DELETAR';
+
+	 			$button.addEventListener('click', this.deleteCar, false);
+
 	 			$tr.appendChild($tdImg);
 	 			$tr.appendChild($tdMarca);
 	 			$tr.appendChild($tdAno);
 	 			$tr.appendChild($tdPlaca);
 	 			$tr.appendChild($tdCor);
+	 			$tr.appendChild($button);
+
 
 	 			return $fragment.appendChild($tr);
+	 		},
+
+	 		deleteCar: function deleteCar() {
+	 			let $tableCar = DOM('[data-js="tableCar"]').get();
+	 			console.log(this)
+	 			$tableCar.removeChild(this.parentNode);
 	 		},
 
 	 		companyInfo: function companyInfo() {
